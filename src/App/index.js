@@ -1,38 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from 'firebase';
+import Routes from '../helpers/Routes';
 import './App.scss';
+import NavBar from './components/NavBar';
+import '../styles/index.scss';
+import { getCountry } from '../helpers/data/countryData';
+import { getStates } from '../helpers/data/stateData';
 
 function App() {
-  const [domWriting, setDomWriting] = useState('Nothing Here!');
+  const [admin, setAdmin] = useState(null);
+  const [country, setCountry] = useState([]);
+  const [state, setState] = useState([]);
 
-  const handleClick = (e) => {
-    console.warn(`You clicked ${e.target.id}`);
-    setDomWriting(`You clicked ${e.target.id}! Check the Console!`);
-  };
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((authed) => {
+      if (authed && (authed.uid === process.env.REACT_APP_ADMIN_UID)) {
+        setAdmin(true);
+        getCountry().then((projectsArray) => setCountry(projectsArray));
+        getStates().then((projectsArray) => setState(projectsArray));
+      } else if (admin || admin === null) {
+        setAdmin(false);
+        getCountry().then((projectsArray) => setCountry(projectsArray));
+        getStates().then((projectsArray) => setState(projectsArray));
+      }
+    });
+  }, []);
 
   return (
-    <div className='App'>
-      <h2>INSIDE APP COMPONENT</h2>
-      <div>
-        <button
-          id='this-button'
-          className='btn btn-info'
-          onClick={handleClick}
-        >
-          I am THIS button
-        </button>
+    <div>
+      <NavBar />
+      <Routes
+      state={state}
+      setState={setState}
+      country={country}
+      setCountry={setCountry}
+      />
       </div>
-      <div>
-        <button
-          id='that-button'
-          className='btn btn-primary mt-3'
-          onClick={handleClick}
-        >
-          I am THAT button
-        </button>
-      </div>
-      <h3>{domWriting}</h3>
-    </div>
   );
 }
-
 export default App;
