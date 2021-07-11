@@ -8,8 +8,9 @@ import {
   CardSubtitle
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-import CountriesForm from '../../forms/CountriesForm';
 import { deleteStates } from '../../helpers/data/stateData';
+// import StatesForm from '../../forms/StatesForm';
+import StateModal from './StateModal';
 
 const StatesCard = ({
   setStates,
@@ -62,7 +63,7 @@ const StatesCard = ({
         <CardText>Activites: {activities}</CardText>
         <CardText>Notes: {notes}</CardText>
         { editCard(firebaseKey) }
-        { editing && <CountriesForm
+        { editing && <StateModal
             formTitle='Edit Project'
             setState={setStates}
             firebaseKey={firebaseKey}

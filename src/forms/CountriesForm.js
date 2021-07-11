@@ -14,7 +14,8 @@ const CountriesForm = ({
   activities,
   restaurant,
   notes,
-  citiesVisited
+  citiesVisited,
+  setModal
 
 }) => {
   const history = useHistory();
@@ -33,6 +34,7 @@ const CountriesForm = ({
     e.preventDefault();
     if (country.firebaseKey) {
       updateCountry(country).then(setCountry);
+      setModal(false);
     } else {
       addCountry(country).then(setCountry)
         .then(() => {
@@ -148,7 +150,8 @@ CountriesForm.propTypes = {
   activities: PropTypes.string,
   restaurant: PropTypes.string,
   notes: PropTypes.string,
-  citiesVisited: PropTypes.string
+  citiesVisited: PropTypes.string,
+  setModal: PropTypes.string
 };
 
 export default CountriesForm;
