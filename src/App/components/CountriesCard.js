@@ -10,8 +10,9 @@ import {
 import PropTypes from 'prop-types';
 // import DogForm from '../../forms/DogForm';
 // import { addWishList } from '../../helpers/data/wishListData';
-import CountriesCardForm from '../../forms/CountriesCardForm';
+// import CountriesCardForm from '../../forms/CountriesCardForm';
 import { deleteCountry } from '../../helpers/data/countryData';
+import CountryModal from './CountryModal';
 
 const CountriesCard = ({
   countryName,
@@ -73,7 +74,7 @@ const CountriesCard = ({
           <CardText>Activities: {activities}</CardText>
           <CardText>Notes: {notes}</CardText>
           { editCard(firebaseKey) }
-          { editing && <CountriesCardForm
+          { editing && <CountryModal
               formTitle='Edit Project'
               setCountries={setCountries}
               firebaseKey={firebaseKey}
