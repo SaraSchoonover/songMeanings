@@ -26,7 +26,7 @@ const NavBar = () => {
   // );
   return (
     <div>
-      <Navbar light expand="md">
+      <Navbar style={{ backgroundColor: '#EAE4E9' }} light expand="md">
         <NavbarBrand href="/">Visit Me</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

@@ -50,7 +50,7 @@ const StatesCardForm = ({
     autoComplete='off'
     onSubmit={handleSubmit}
     >
-        <h2>Add A New State: </h2>
+        <h2>Edit State: </h2>
         <FormGroup>
         </FormGroup>
         <FormGroup>
