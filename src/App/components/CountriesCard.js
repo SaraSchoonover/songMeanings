@@ -45,8 +45,8 @@ const CountriesCard = ({
 
   const editCard = (fbKey) => (
     <div className='editbtns'>
-      <Button style={{ backgroundColor: '#FFFFFF', color: '#28282B', border: '#FFFFFF' }} onClick={() => handleClick(fbKey, 'delete')}><i className="far fa-trash-alt"></i></Button>
-      <Button style={{ backgroundColor: '#FFFFFF', color: '#28282B', border: '#FFFFFF' }}
+      <Button style={{ backgroundColor: '#EAE4E9', color: '#28282B', border: '#black' }} onClick={() => handleClick(fbKey, 'delete')}><i className="far fa-trash-alt"></i></Button>
+      <Button style={{ backgroundColor: '#EAE4E9', color: '#28282B', border: '#black' }}
        onClick={() => handleClick(fbKey, 'edit')}>
       <i className="far fa-edit"></i>
     {editing ? 'Close Form' : ' '}
@@ -62,7 +62,7 @@ const CountriesCard = ({
   // );
 
   return (
-      <Card className='dogCard'>
+      <Card className='countryCard'>
         <CardBody>
           <CardTitle tag="h5">{countryName}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">Location: {location}</CardSubtitle>

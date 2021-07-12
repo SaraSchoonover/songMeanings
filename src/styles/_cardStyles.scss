@@ -1,11 +1,31 @@
 .card {
   width: 350px;
   margin: 30px; 
+  background-color: #F2CC8F;
+  border: '#red';
 }
 
 .card-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  border: '#FFFFFF' 
+  border: '#red';
+  background-color: #E2ECE9;
 }
+
+.stateCard {
+  background-color: #BEE1E6 !important;
+}
+
+.countryCard {
+  background-color: #BEE1E6 !important;
+}
+
+.font {
+  text-align: center;
+  // background-color: #E2ECE9;
+}
+
+// h2 {
+//   background-color: #E2ECE9;
+// }

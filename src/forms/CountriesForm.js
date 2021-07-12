@@ -50,7 +50,7 @@ const CountriesForm = ({
   };
 
   return (
-    <div className='pForm'>
+    <div className='cForm'>
     <Form
     id='addProjectForm'
     autoComplete='off'

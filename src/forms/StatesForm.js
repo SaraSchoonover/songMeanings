@@ -47,13 +47,13 @@ const StatesForm = ({
   };
 
   return (
-    <div className='pForm'>
+    <div className='sForm'>
     <Form
     id='addProjectForm'
     autoComplete='off'
     onSubmit={handleSubmit}
     >
-        <h2>Project Form: </h2>
+        <h2>Add A State: </h2>
         <FormGroup>
         </FormGroup>
         <FormGroup>

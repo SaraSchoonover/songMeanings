@@ -51,7 +51,7 @@ const CountriesCardForm = ({
     autoComplete='off'
     onSubmit={handleSubmit}
     >
-        <h2>Add A New Country: </h2>
+        <h2>Edit Country: </h2>
         <FormGroup>
         </FormGroup>
         <FormGroup>
